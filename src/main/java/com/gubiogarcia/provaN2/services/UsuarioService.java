@@ -32,11 +32,11 @@ public class UsuarioService {
 
     public Usuario save(UsuarioDTO usuariodto) {
         if (usuariodto.getNome().trim().isEmpty() || usuariodto.getCurso().trim().isEmpty() || usuariodto.getMatricula().trim().isEmpty())
-            throw new RuntimeException("Valores obrigatórios não preenchidos");
+            throw new IllegalArgumentException("Valores obrigatórios não preenchidos");
 
         Usuario usuarioAux = this.usuarioRepository.findByMatricula(usuariodto.getMatricula());
         //if (usuario.getCurso() == usuariodto.getCurso()) throw new RuntimeException("Já existe usuário com está matrícula para este curso.");
-        if (usuarioAux != null) throw new RuntimeException("Já existe usuário com está matrícula.");
+        if (usuarioAux != null) throw new IllegalArgumentException("Já existe usuário com está matrícula.");
 
         Usuario usuario = new Usuario();
         usuario.setNome(usuariodto.getNome());

@@ -25,9 +25,10 @@ public class Emprestimos {
 
     private Status status;
 
-    private Boolean ativo;
+    public Emprestimos() {
+    }
 
-    public Emprestimos(Long id, Livro livro, Usuario usuario, LocalDate dataEmprestimo, LocalDate dataDevolucaoPrevista, LocalDate dataDevolucao, Status status, Boolean ativo) {
+    public Emprestimos(Long id, Livro livro, Usuario usuario, LocalDate dataEmprestimo, LocalDate dataDevolucaoPrevista, LocalDate dataDevolucao, Status status) {
         Id = id;
         this.livro = livro;
         this.usuario = usuario;
@@ -35,10 +36,6 @@ public class Emprestimos {
         this.dataDevolucaoPrevista = dataDevolucaoPrevista;
         this.dataDevolucao = dataDevolucao;
         this.status = status;
-        this.ativo = ativo;
-    }
-
-    public Emprestimos() {
     }
 
     public Long getId() {
@@ -97,29 +94,22 @@ public class Emprestimos {
         this.status = status;
     }
 
-    public Boolean getAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(Boolean ativo) {
-        this.ativo = ativo;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Emprestimos that = (Emprestimos) o;
-        return Objects.equals(Id, that.Id) && Objects.equals(livro, that.livro) && Objects.equals(usuario, that.usuario) && Objects.equals(dataEmprestimo, that.dataEmprestimo) && Objects.equals(dataDevolucaoPrevista, that.dataDevolucaoPrevista) && Objects.equals(dataDevolucao, that.dataDevolucao) && status == that.status && Objects.equals(ativo, that.ativo);
+        return Objects.equals(Id, that.Id) && Objects.equals(livro, that.livro) && Objects.equals(usuario, that.usuario) && Objects.equals(dataEmprestimo, that.dataEmprestimo) && Objects.equals(dataDevolucaoPrevista, that.dataDevolucaoPrevista) && Objects.equals(dataDevolucao, that.dataDevolucao) && status == that.status;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Id, livro, usuario, dataEmprestimo, dataDevolucaoPrevista, dataDevolucao, status, ativo);
+        return Objects.hash(Id, livro, usuario, dataEmprestimo, dataDevolucaoPrevista, dataDevolucao, status);
     }
 
     @Override
-    public String toString() {
+    public String
+    toString() {
         return "Emprestimos{" +
                 "Id=" + Id +
                 ", livro=" + livro +
@@ -128,7 +118,6 @@ public class Emprestimos {
                 ", dataDevolucaoPrevista=" + dataDevolucaoPrevista +
                 ", dataDevolucao=" + dataDevolucao +
                 ", status=" + status +
-                ", ativo=" + ativo +
                 '}';
     }
 }

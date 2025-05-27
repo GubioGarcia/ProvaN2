@@ -28,9 +28,9 @@ public class LivroService {
 
     public Livro save(LivroDTO livrodto) {
         if (livrodto.getAnoDePublicacao() < 0 || livrodto.getAnoDePublicacao() > 2025)
-            throw new RuntimeException("Ano de publicação inválido");
+            throw new IllegalArgumentException("Ano de publicação inválido");
         if (livrodto.getNome().trim().isEmpty() || livrodto.getAutor().trim().isEmpty() || livrodto.getEditora().trim().isEmpty())
-            throw new RuntimeException("Valores obrigatórios não preenchidos.");
+            throw new IllegalArgumentException("Valores obrigatórios não preenchidos.");
 
         Livro livro = new Livro();
 
@@ -44,9 +44,9 @@ public class LivroService {
 
     public Livro update(Livro livro) {
         if (livro.getAnoDePublicacao() < 0 || livro.getAnoDePublicacao() > 2025)
-            throw new RuntimeException("Ano de publicação inválido");
+            throw new IllegalArgumentException("Ano de publicação inválido");
         if (livro.getNome().trim().isEmpty() || livro.getAutor().trim().isEmpty() || livro.getEditora().trim().isEmpty())
-            throw new RuntimeException("Valores obrigatórios não preenchidos.");
+            throw new IllegalArgumentException("Valores obrigatórios não preenchidos.");
 
 
         return this.livroRepository.save(livro);

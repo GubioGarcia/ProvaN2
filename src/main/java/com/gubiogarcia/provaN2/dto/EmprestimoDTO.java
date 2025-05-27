@@ -6,22 +6,22 @@ import com.gubiogarcia.provaN2.entity.Usuario;
 import java.time.LocalDate;
 
 public class EmprestimoDTO {
-    private Livro livro;
-    private Usuario usuario;
+    private Long livroId;
+    private Long usuarioId;
 
-    public Livro getLivro() {
-        return livro;
+    public Long getLivroId() {
+        return livroId;
     }
 
-    public void setLivro(Livro livro) {
-        this.livro = livro;
+    public void setLivroId(Long livroId) {
+        this.livroId = livroId;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Long getUsuarioId() {
+        return usuarioId;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuarioId(Long usuarioId) {
+        this.usuarioId = usuarioId;
     }
 }

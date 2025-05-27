@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface EmprestimosRepository extends JpaRepository<Emprestimos, Long> {
-    List<Emprestimos> findByAtivoTrue();
-    List<Emprestimos> findByAtivoFalse();
+    List<Emprestimos> findByStatus(Status status);
+    boolean existsByLivroIdAndStatus(Long livroId, Status status);
+    long countByUsuarioIdAndStatus(Long usuarioId, Status status);
 }
