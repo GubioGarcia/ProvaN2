@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 public class EmprestimoDTO {
     private Livro livro;
-    private Usuario usuarioDTO;
+    private Usuario usuario;
 
     public Livro getLivro() {
         return livro;
@@ -17,11 +17,11 @@ public class EmprestimoDTO {
         this.livro = livro;
     }
 
-    public Usuario getUsuarioDTO() {
-        return usuarioDTO;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setUsuarioDTO(Usuario usuarioDTO) {
-        this.usuarioDTO = usuarioDTO;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

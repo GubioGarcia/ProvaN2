@@ -36,7 +36,7 @@ public class EmprestimosService {
 
     public Emprestimos registrarEmprestimo(EmprestimoDTO emprestimodto) {
         Emprestimos emprestimo = new Emprestimos();
-        emprestimo.setUsuario(emprestimodto.getUsuarioDTO());
+        emprestimo.setUsuario(emprestimodto.getUsuario());
         emprestimo.setLivro(emprestimodto.getLivro());
         emprestimo.setDataEmprestimo(LocalDate.now());
         emprestimo.setDataDevolucao(LocalDate.now().plusDays(7));
