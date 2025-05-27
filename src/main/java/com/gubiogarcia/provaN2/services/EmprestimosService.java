@@ -35,8 +35,6 @@ public class EmprestimosService {
     }
 
     public Emprestimos registrarEmprestimo(EmprestimoDTO emprestimodto) {
-        Long livroId = emprestimodto.getLivro().getId();
-
         Emprestimos emprestimo = new Emprestimos();
         emprestimo.setUsuario(emprestimodto.getUsuarioDTO());
         emprestimo.setLivro(emprestimodto.getLivro());
